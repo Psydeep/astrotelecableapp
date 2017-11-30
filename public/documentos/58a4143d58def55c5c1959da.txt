@@ -1,0 +1,23 @@
+<asp:ScriptManager ID="ScriptManager1" runat="server" />
+        
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1" DefaultMode="Insert">
+            <InsertItemTemplate>
+            Name: <asp:TextBox ID="txtName" runat="server" Text='<%# Bind("name") %>' /><br />
+            Comments:<br /><asp:TextBox ID="txtComments" runat="server" Columns="50" 
+                Rows="4" TextMode="MultiLine" Text='<%# Bind("comments") %>' />
+            <asp:HiddenField ID="hidDate" runat="server" Value='<%# Bind("date") %>' />
+            <br /><br />
+            <asp:Button ID="butSubmit" runat="server" CommandName="Insert" Text="Submit" />
+            </InsertItemTemplate>
+            </asp:FormView>
+            
+            
+            <asp:DataGrid ID="DataGrid1" runat="server" DataSourceID="SqlDataSource1" 
+                Width="621px">
+            </asp:DataGrid>
+        </ContentTemplate>
+        </asp:UpdatePanel>
+
+El Pacífico
